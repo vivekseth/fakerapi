@@ -57,6 +57,13 @@ function isParseCandidate(a) {
 function convertToFakedData(parseCandidate) {
     try {
         var formatString = parseCandidate.substring(2, parseCandidate.length-2);
+        
+        // TODO accept function arguments. 
+        // parse: 
+        // - components, 
+        // - arguments, 
+        // - convert arguments to numbers if possible
+
         var components = formatString.split(".");
         var last = faker;
         for (var i=0; i<components.length; i++) {
