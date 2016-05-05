@@ -88,13 +88,14 @@ function convertToFakedData(parseCandidate) {
 /* -------- */
 
 function traverseJSON(jsonRoot, newRoot) {
-    if (!isComplexType(jsonRoot)) { // base case
+    // If not complex type can stop recursion and process.
+    if (!isComplexType(jsonRoot)) {
         if (!isParseCandidate(jsonRoot)) {
             return jsonRoot;
         } else {
             return (convertToFakedData(jsonRoot));
         }
-    } else { // recursive case
+    } else { 
         if (isObject(jsonRoot)) {
             var temp = {};
             for (i in jsonRoot) {
